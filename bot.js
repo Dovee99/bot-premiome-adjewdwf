@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-\\ كود البروكسات
  client.on('message', message => {
               if(!message.channel.guild) return;
     var prefixbc = "+";
@@ -45,7 +44,6 @@ const client = new Discord.Client();
     }
     });
 
-\\كود مسح الشات
 
 var prefixcl = '+';
 
