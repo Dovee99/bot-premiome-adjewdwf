@@ -52,7 +52,7 @@ client.on('message', msg => {
   if (msg.author.bot) return;
   if (!msg.content.startsWith(prefixcl)) return;
   let command = msg.content.split(" ")[0];
-  command = command.slice(prefix.length);
+  command = command.slice(prefixcl.length);
   let args = msg.content.split(" ").slice(1);
  
     if(command === "clear") {
