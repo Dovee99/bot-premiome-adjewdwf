@@ -1,11 +1,11 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-
+\\ كود البروكسات
  client.on('message', message => {
               if(!message.channel.guild) return;
-    var prefix = "-";
-    if(message.content.startsWith(prefix + 'bc')) {
+    var prefixbc = "+";
+    if(message.content.startsWith(prefixbc + 'bc')) {
     if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
   if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
     let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
@@ -44,6 +44,41 @@ const client = new Discord.Client();
     })
     }
     });
+
+\\كود مسح الشات
+
+var prefixcl = '+';
+
+client.on('message', msg => {
+
+  if (msg.author.bot) return;
+  if (!msg.content.startsWith(prefixcl)) return;
+  let command = msg.content.split(" ")[0];
+  command = command.slice(prefix.length);
+  let args = msg.content.split(" ").slice(1);
+ 
+    if(command === "clear") {
+        const emoji = client.emojis.find("name", "wastebasket")
+    let textxt = args.slice(0).join("");
+    if(msg.member.hasPermission("MANAGE_MESSAGES")) {
+    if (textxt == "") {
+        msg.delete().then
+    msg.channel.send("***```ضع عدد الرسائل التي تريد مسحها 👌```***").then(m => m.delete(3000));
+} else {
+    msg.delete().then
+    msg.delete().then
+    msg.channel.bulkDelete(textxt);
+        msg.channel.send("```php\nعدد الرسائل التي تم مسحها: " + textxt + "\n```").then(m => m.delete(3000));
+        }    
+    }
+}
+});
+
+
+
+
+
+
  
  
  
