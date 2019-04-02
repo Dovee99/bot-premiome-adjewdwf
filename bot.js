@@ -46,11 +46,11 @@ const client = new Discord.Client();
 
 
 
-
+var eprefix = '+';
 client.on('message', msg => {
 
   if (msg.author.bot) return;
-  if (!msg.content.startsWith(prefix)) return;
+  if (!msg.content.startsWith(eprefix)) return;
   let command = msg.content.split(" ")[0];
   command = command.slice(prefix.length);
   let args = msg.content.split(" ").slice(1);
