@@ -76,7 +76,7 @@ client.on('message', msg => {
 
 client.on('message', function(msg) {
       
-    if(msg.content.startsWith (prefixm + 'stats')) {
+    if(msg.content.startsWith (prefix + 'stats')) {
       if(!msg.channel.guild) return msg.reply('**❌ اسف لكن هذا الامر للسيرفرات فقط **');
       let embed = new Discord.RichEmbed()
       .setColor('RANDOM')
