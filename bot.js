@@ -3,11 +3,11 @@ const client = new Discord.Client();
 
  client.on('message', message => {
               if(!message.channel.guild) return;
-    var prefix = "+";
-    if(message.content.startsWith(prefix + 'bc')) {
+    var prefixbc = "+";
+    if(message.content.startsWith(prefixbc+ 'bc')) {
     if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
   if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
-    let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
+    let args = message.content.split(" ").join(" ").slice(2 + prefixbc.length);
     let copy = "alpha codes";
     let request = `Requested By ${message.author.username}`;
     if (!args) return message.reply('```**يجب عليك كتابة كلمة او جملة لإرسال البرودكاست**```');message.channel.send(`**هل أنت متأكد من إرسالك البرودكاست؟ \nمحتوى البرودكاست:** \` ${args}\``).then(msg => {
@@ -73,10 +73,10 @@ client.on('message', msg => {
 });
 
 
-
+var prefixm = '+';
 client.on('message', function(msg) {
       
-    if(msg.content.startsWith (prefix + 'stats')) {
+    if(msg.content.startsWith (prefixm+ 'stats')) {
       if(!msg.channel.guild) return msg.reply('**❌ اسف لكن هذا الامر للسيرفرات فقط **');
       let embed = new Discord.RichEmbed()
       .setColor('RANDOM')
@@ -97,9 +97,9 @@ client.on('message', function(msg) {
     }
   });
 
-
+var prefixh = '+'
 client.on('message', message => {
-            if (message.content.startsWith(prefix + "help")) {
+            if (message.content.startsWith(prefixh + "help")) {
      let embed = new Discord.RichEmbed()
 .setThumbnail(message.author.avatarURL)
 .addField('     **bc1** ' ,' **بث جماعي + للكل + مطور** ')
